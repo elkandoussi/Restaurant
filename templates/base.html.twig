@@ -11,6 +11,7 @@
     <body>
 
         <div class="container-fluid">
+            {% block header %}
             <div class="row" id="header">
                 <div class="col-12">          
             
@@ -29,9 +30,11 @@
                             <a class="btn btn-outline-success" href="#about">En savoir plus</a>
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
+            {% endblock %}
 
+            
             {% block body %}{% endblock %}
             
         </div>

@@ -16,7 +16,7 @@ class HomeController extends AbstractController
         $bestProducts = $productRepository->findBestProducts();
         
         dump($bestProducts);
-        return $this->render('home/index.html.twig', [
+        return $this->render('home/home.html.twig', [
             'bestProducts' => $bestProducts,
         ]);
     }

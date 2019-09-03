@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu - Restaurant Casa de papel{% endblock %}
+
+{% block header %}
+<div class="row">
+    {% include "layouts/header.html.twig" %}
+</div>
+<div class="row bg-menu">
+    <div class="col-12 bg-grBlack d-flex flex-column justify-content-center">
+        <h2 class="text-center">Menu</h2>
+        <hr class="w-25 border-warning">
+    </div>
+</div>
+{% endblock %}
+{% block body %}
+
+<div class="row justify-content-around mt-5">
+    <div class="col-4 text-center">
+        <a class="btn btn-outline-success rounded-circle  p-5 btn-icon" href="#entrees" onclick="showEntrees()">
+            <img src="{{ asset('static/icon-entree.svg') }}" alt="icon-entree" class="img-fluid">
+            <h5>Entrées</h5>
+        </a>
+    </div>
+
+    <div class="col-4 text-center">
+        <a class="btn btn-outline-danger rounded-circle p-5 btn-icon" href="#plats" onclick="showPlats()">
+            <img src="{{ asset('static/icon-plat.svg') }}" alt="icon-plat" class="img-fluid">
+            <h5>Plats</h5>
+        </a>
+    </div>
+
+    <div class="col-4 text-center">
+        <a class="btn btn-outline-warning rounded-circle p-5 btn-icon" href="#">
+            <img src="{{ asset('static/icon-dessert.svg') }}" alt="icon-dessert" class="img-fluid">
+            <h5>Desserts</h5>
+        </a>
+    </div>
+</div>
+
+<hr>
+
+<div class="row d-none" id="plats">
+    {% for plat in plats %}
+    <div class="col">
+        <div class="card">
+            <img src="{{ asset('static/plat1.jpeg') }}" class="card-img">
+            <div class="card-body">
+                <h5 class="card-title"> {{ plat.label }} </h5>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<div class="row d-none" id="entrees">
+    {% for entree in entrees %}
+    <div class="col">
+        <div class="card">
+            <img src="{{ asset('static/salade.jpeg') }}" class="card-img">
+            <div class="card-body">
+                <h5 class="card-title"> {{ entree.label }} </h5>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{{ encore_entry_script_tags('app') }}
+
+{% endblock %}
