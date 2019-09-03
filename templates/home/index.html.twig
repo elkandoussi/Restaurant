@@ -1,7 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
-
 {% block body %}
+<div class="row" id="about">
+    <div class="col-md-6 col-12">
+        <div class="border shadow p-lg-5 p-2 h-100">
+            <h2 class="text-center">Réstaurant <span>"Casa de papel"</span></h2>
+            <hr class="w-25 border-dark">
+            <p class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing
+                elit. Commodi quas doloremque, magni, iste facere incidunt,
+                sunt aliquam recusandae accusantium labore repellat corrupti
+                voluptatum cum velit dignissimos? Ullam consequuntur ipsum voluptatem omnis
+                facilis! Et eius corporis quasi vero, accusamus nam dicta?</p>
+        </div>
+    </div>
 
+    <div class="col-md-6 col-12 mt-3 mt-md-0 h-100">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- best products-->
+<div class="row" id="thebest">
+    <div class="col-12">
+        <h2>Nos Meilleurs Plats :</h2>
+        <hr class="border-warning" style="border: 2px solid currentColor;">
+        <div class="row">
+            {% for product in bestProducts %}
+            <div class="col-lg-3 col-md-6 col-12 mt-3 mt-lg-auto">
+                <div class="card h-100 w-100">
+                    <img src="{{ asset('static/plat1.jpeg') }}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title text-justify">
+                            {{ product.label }} <span class="text-warning float-right">23 Dhs</span>
+                        </h5>
+                        <p class="card-text text-justify"> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Facilis aspernatur eos sapiente minus deserunt harum a sed necessitatibus. Dolores, vitae?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <a href="" class="btn btn-info">Consulte le menu</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- reservation -->
+<div class="row" id="reservation">
+    <div class="row bg-reservation align-items-center">
+        <div class="col text-center p-4">
+            <h2 style="text-shadow: 4px 3px black;">" Des ingredients naturals, mangez en toute sérénité. "</h2> <br/>
+            <a href="#" class="btn btn-info">Réservez votre table</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

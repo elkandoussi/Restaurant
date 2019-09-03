@@ -2,13 +2,40 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}La casa de papel, restaurant marocain{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+
+        <div class="container-fluid">
+            <div class="row" id="header">
+                <div class="col-12">          
+            
+                    <div class="row">
+                        <div class="col-12">
+                            {% include "layouts/navbar.html.twig" %}
+                        </div>
+                    </div>
+        
+                    <div class="row h-50 align-items-center" id="welcoming">
+                        <div class="col text-center">
+                            <h1 class="p-5">
+                                <span class="market">La casa de papel</span> <br>
+                                <span class="slogan">un restaurant pour tous les goûts</span>
+                            </h1>
+                            <a class="btn btn-outline-success" href="#about">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% block body %}{% endblock %}
+            
+        </div>
+        
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
