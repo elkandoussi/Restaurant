@@ -19,7 +19,8 @@ class MenuController extends AbstractController
 
         return $this->render('menu/menu.html.twig', [
             'plats' => $plats,
-            'entrees' => $entrees
+            'entrees' => $entrees,
+            'desserts' => $desserts
         ]);
     }
 }

@@ -10,15 +10,13 @@
     </head>
     <body>
 
-        <div class="container-fluid">
+        <div class="container-fluid" id="app">
             {% block header %}
             <div class="row" id="header">
                 <div class="col-12">          
             
                     <div class="row">
-                        <div class="col-12">
-                            {% include "layouts/navbar.html.twig" %}
-                        </div>
+                        {% include "layouts/navbar.html.twig" %}
                     </div>
         
                     <div class="row h-50 align-items-center" id="welcoming">

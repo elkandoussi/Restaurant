@@ -1,16 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-    <a class="navbar-brand col-4" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent col-12">
+    <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
     </button>
     
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto col-8">
+        <ul class="navbar-nav mx-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Acceuil <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ path('home') }}">Acceuil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Menu</a>
+                <a class="nav-link" href="{{ path('menu') }}">Menu</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Réservation</a>
@@ -23,4 +23,7 @@
             </li>
         </ul>
     </div>
+
+    <a class="btn btn-light ml-auto"><i class="fas fa-user-edit"></i> S'incrire</a>
+
 </nav>
