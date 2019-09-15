@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page d'inscription sur le site du restaurant</title>
+    {{ encore_entry_link_tags('app') }}
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row align-items-center" style="height: 100vh;">
+            <div class="col-12">
+                <h3 class="text-center">Formulaire d'inscription :</h3>
+
+                <div class="row justify-content-center mt-3">
+                <div class="col-lg-6 col-md-8 col-10 border shadow-lg p-md-5 p-3 text-center">
+                    {{ form_start(form) }}
+
+                    {{ form_widget(form) }}
+
+                    <button type="submit" class="btn btn-success rounded-pill">Envoyer</button>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    {{ encore_entry_script_tags('app') }}
+</body>
+
+</html>

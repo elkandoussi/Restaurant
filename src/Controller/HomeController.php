@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Reservation;
+use App\Form\ReservationType;
 use App\Repository\ProductRepository;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
@@ -19,5 +21,17 @@ class HomeController extends AbstractController
         return $this->render('home/home.html.twig', [
             'bestProducts' => $bestProducts,
         ]);
+    }
+
+    /**
+     * @Route("/reservation", name="reservation")
+     */
+    public function book(){
+        $reservation = new Reservation();
+
+        $formBook = $this->createForm(ReservationType::class, $reservation);
+       return $this->render('/home/reservation.html.twig', [
+           'formBook' => $formBook->createView()
+       ]);
     }
 }

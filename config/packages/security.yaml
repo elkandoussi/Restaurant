@@ -1,13 +1,29 @@
 security:
+    encoders:
+        App\Entity\Client:
+            algorithm: bcrypt
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory: { memory: null }
+        # used to reload user from session & other features (e.g. switch_user)
+        user_client:
+            entity:
+                class: App\Entity\Client
+                property: email
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+            anonymous: ~
+            form_login:
+               login_path: login_client
+               check_path: login_client
+               target_path_parameter: home
+            logout:
+               path: logout_client
+               #target: home
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

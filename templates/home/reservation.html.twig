@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Réservez votre table - restaurant Casa de papel{% endblock %}
+
+{% block header %}
+    <div class="row">
+        {% include "layouts/navbarPage.html.twig" %}
+    </div>
+
+    <div class="row" id="bookHeader">
+        <div class="col-12 bg-grBlack d-flex flex-column justify-content-center">
+            <h1 class="text-center">Réservez votre table</h1>
+            <hr class="w-25 border-warning">
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+<div class="row justify-content-center mt-3">
+    <div class="col-lg-7 col-12 border border-info p-lg-4 shadow text-center">
+        {{ form_start(formBook)}}
+        yarn
+        {{ form_widget(formBook) }}
+        
+        <button class="btn btn-info ">Envoyer</button>
+        {{ form_end(formBook) }}
+    </div>
+</div>
+{{form(formBook)}}
+{% endblock %}

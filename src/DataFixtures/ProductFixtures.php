@@ -34,7 +34,7 @@ class ProductFixtures extends Fixture
                 $product = new Product();
                 $product->setLabel($item);
                 $product->setDescription($faker->text);
-                $product->setPrice($faker->randomFloat(10,30));
+                $product->setPrice($faker->randomFloat(2,10,80));
                 $product->setAvis($faker->numberBetween(1,5));
                 $product->setCategory($category);
 

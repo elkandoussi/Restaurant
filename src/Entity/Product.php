@@ -106,4 +106,13 @@ class Product
 
         return $this;
     }
+
+    public function toArray(): array{
+        return array(
+            'id' => $this->id,
+            'label' => $this->label,
+            'price' => $this->price,
+            'avis' => $this->avis
+            );
+    }
 }

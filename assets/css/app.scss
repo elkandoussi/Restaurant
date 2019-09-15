@@ -57,12 +57,12 @@ h2{
 
 
 /********* Reservation ***********/
-#reservation{
-    background-image: url('../img/bg-reservation.jpg');
+#bookTable{
+    background-image: url('../img/bg-bookTable.jpg');
     height: 400px;
 }
 
-.bg-reservation{
+.bg-bookTable{
     background: rgba(black, 0.6) center no-repeat;
     color: rgb(128, 114, 114);
     width: 100%;
@@ -102,5 +102,24 @@ h2{
     @media (max-width: 576px){
         width: 40px;
         height: 40px
+    }
+}
+
+/*********** page Réservation ************/
+#bookHeader{
+    background: url('../img/bg-bookHeader.jpg') bottom left no-repeat;
+    background-size: cover;
+    height: 40vh;
+    color: white;
+}
+
+.logo{
+    h2{
+        font-size: 20px;
+    }
+
+    img{
+        max-height: 50px;
+        max-width: 50px;
     }
 }

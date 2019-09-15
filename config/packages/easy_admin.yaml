@@ -1,0 +1,13 @@
+easy_admin:
+  site_name: '<em>La casa de papel</em>'
+  entities:
+      # List the entity class name you want to manage
+      Product:
+        class: App\Entity\Product
+        list:
+          title: 'la liste des produits'
+          max_results: 8
+          fields: ['id', 'label', 'price', 'category.name', 'avis']
+      Category:
+        class: App\Entity\Category
+#        - App\Entity\User

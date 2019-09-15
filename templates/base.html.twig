@@ -2,21 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}La casa de papel, restaurant marocain{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('./static/logo.png')}}" type="image/x-icon">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
     <body>
-
+        
         <div class="container-fluid" id="app">
             {% block header %}
             <div class="row" id="header">
                 <div class="col-12">          
             
                     <div class="row">
-                        {% include "layouts/navbar.html.twig" %}
+                        {% include "layouts/navbarHome.html.twig" %}
                     </div>
         
                     <div class="row h-50 align-items-center" id="welcoming">
@@ -36,9 +37,9 @@
             {% block body %}{% endblock %}
             
         </div>
-        
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
+
         {% endblock %}
     </body>
 </html>

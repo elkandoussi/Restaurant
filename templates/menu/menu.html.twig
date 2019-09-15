@@ -4,7 +4,7 @@
 
 {% block header %}
 <div class="row">
-    {% include "layouts/header.html.twig" %}
+    {% include "layouts/navbarPage.html.twig" %}
 </div>
 
 <div class="row bg-menu">
@@ -16,110 +16,41 @@
 {% endblock %}
 
 {% block body %}
-
+<div id="menu">
 <div class="row mt-5" id="buttons">
     <div class="col-4 text-center">
-        <a class="btn btn-outline-success rounded-circle p-4" href="#entrees" v-on:click="showEntrees"
-            v-bind:class="{ 'active': EisActive }">
+        <router-link class="btn btn-outline-success rounded-circle p-4" 
+            to="/entrees" active-class="active">
             <img src="{{ asset('static/icon-entree.svg') }}" alt="icon-entree" class="img-sm">
             <h5>Entrée</h5>
-        </a>
+        </router-link>
     </div>
 
     <div class="col-4 text-center">
-        <a class="btn btn-outline-danger rounded-circle p-4" href="#plats" v-on:click="showPlats"
-            v-bind:class="{ 'active': PisActive }">
+        <router-link class="btn btn-outline-danger rounded-circle p-4" 
+            to="/plats" active-class="active">
             <img src="{{ asset('static/icon-plat.svg') }}" alt="icon-plat" class="img-sm">
             <h5>Plats</h5>
-        </a>
+        </router-link>
     </div>
+    
 
     <div class="col-4 text-center">
-        <a class="btn btn-outline-warning rounded-circle p-4" href="#" v-on:click="showDesserts"
-            v-bind:class="{ 'active': DisActive }">
+        <router-link class="btn btn-outline-warning rounded-circle p-4" 
+        to="/desserts" active-class="active">
             <img src="{{ asset('static/icon-dessert.svg') }}" alt="icon-dessert" class="img-sm">
             <h5>Desserts</h5>
-        </a>
+        </router-link>
     </div>
+
+</div>    
+
+<router-view></router-view> 
+
 </div>
 
-<hr>
-
-<div class="row" v-bind:class="[display]" id="plats">
-    {% for plat in plats %}
-    <div class="col-lg-4 col-md-6 col-12 mt-3">
-        <div class="card" style="width: 20em;">
-            <img src="{{ asset('static/plat1.jpeg') }}" class="card-img">
-            <div class="card-body">
-                <h5 class="card-title">{{ plat.label }} <span class="float-right bg-warning">50 Dhs</span></h5>
-                <h6 class="card-subtitle">
-                    Catégorie: Plat
-                    <span class="float-right">
-                        {% for item in range(1,plat.avis) %}
-                        <i class="fas fa-star text-warning"></i>
-                        {% endfor %}
-                    </span>
-                </h6>
-                <hr class="border-dark">
-                <div class="card-text text-center">
-                    <button class="btn btn-primary">Ajouter au panier</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</div>
-
-
-<div class="row justify-content-center" v-bind:class="[display]" id="entrees">
-    {% for entree in entrees %}
-    <div class="col-lg-4 col-md-6 col-10 mt-3">
-        <div class="card w-100">
-            <img src="{{ asset('static/salade.jpeg') }}" class="card-img">
-            <div class="card-body">
-                <h5 class="card-title">{{ entree.label }} <span class="bg-warning float-right"> 20 Dhs</span></h5>
-                <h6 class="card-subtitle">
-                    catégorie : Entrée
-                    <span class="float-right">
-                        {% for item in range(1,entree.avis) %}
-                        <i class="fas fa-star text-warning"></i>
-                        {% endfor %}
-                    </span>
-                </h6>
-                <hr class="border-dark">
-                <div class="card-text text-center">
-                    <button class="btn btn-primary">Ajouter au panier</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</div>
-
-<div class="row" v-bind:class="[display]" id="desserts">
-    {% for dessert in desserts %}
-    <div class="col-lg-4 col-md-6 col-10 mt-3">
-        <div class="card w-100">
-            <img src="{{ asset('static/dessert1.jpg') }}" class="card-img">
-            <div class="card-body">
-                <h5 class="card-title">{{ dessert.label }} <span class="float-right bg-warning">30 Dhs</span> </h5>
-                <h6 class="card-subtitle">
-                    Catégorie: Dessert
-                    <span class="float-right">
-                        {% for item in range(1,dessert.avis) %}
-                        <i class="fas fa-star text-warning"></i>
-                        {% endfor %}
-                    </span>
-                </h6>
-                <hr class="border-dark">
-                <div class="card-text text-center">
-                    <button class="btn btn-primary">Ajouter au panier</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</div>
-
+{{ encore_entry_script_tags('page_menu') }}
 
 {% endblock %}
+
+
